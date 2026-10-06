@@ -1,0 +1,18 @@
+# dependencies / builds
+node_modules/
+.next/
+out/
+.pnpm-store/
+*.tsbuildinfo
+next-env.d.ts
+
+# runtime data — settings, auth tokens, generations, logs (created on first run)
+.data/
+
+# optional local tooling (portable OpenSCAD etc.)
+tools/
+
+# local helper output
+*.log
+*.err
+*.out

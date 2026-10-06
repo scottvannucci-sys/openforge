@@ -1,0 +1,77 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: dark;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  background:
+    radial-gradient(1200px 600px at 80% -10%, rgba(56, 189, 248, 0.08), transparent 60%),
+    radial-gradient(900px 500px at -10% 110%, rgba(249, 115, 22, 0.07), transparent 60%),
+    #0b0b12;
+  font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+::-webkit-scrollbar-thumb {
+  background: #2a2a3d;
+  border-radius: 8px;
+  border: 2px solid #0b0b12;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::selection {
+  background: rgba(56, 189, 248, 0.35);
+}
+
+.panel {
+  @apply rounded-2xl border border-ink-700 bg-ink-850/70 backdrop-blur;
+}
+
+.chip {
+  @apply inline-flex items-center gap-1.5 rounded-full border px-2.5 py-1 text-[11px] font-medium;
+}
+
+.btn {
+  @apply inline-flex items-center justify-center gap-2 rounded-xl px-3.5 py-2 text-sm font-medium transition-colors disabled:cursor-not-allowed disabled:opacity-40;
+}
+
+.btn-primary {
+  @apply btn text-ink-950;
+  background: linear-gradient(135deg, #38bdf8 0%, #f97316 100%);
+}
+.btn-primary:hover:not(:disabled) {
+  filter: brightness(1.1);
+}
+
+.btn-ghost {
+  @apply btn border border-ink-600 bg-ink-800/60 text-zinc-300 hover:border-ink-600 hover:text-white;
+}
+
+.field {
+  @apply w-full rounded-xl border border-ink-600 bg-ink-900/80 px-3 py-2 text-sm text-zinc-200 placeholder-zinc-600 outline-none transition-colors focus:border-accent-500;
+}
+
+.log-line {
+  @apply font-mono text-[11px] leading-relaxed;
+}
+
+@keyframes pulse-dot {
+  0%, 100% { opacity: 0.25; }
+  50% { opacity: 1; }
+}
+.working-dot {
+  animation: pulse-dot 1.1s ease-in-out infinite;
+}
